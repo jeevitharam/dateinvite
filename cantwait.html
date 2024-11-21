@@ -48,7 +48,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0.2, 0.2);
             border-radius: 10px;
             overflow: hidden;
-            animation: fadeIn 0.5s ease-in-out;
+            animation: zoomIn 0.5s ease-in-out;
         }
 
         /* Popup image */
@@ -79,15 +79,17 @@
             background: #ff4d4d;
         }
 
-        /* Fade-in animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+        @keyframes zoomIn {
+                        from {
+                            transform: scale(0.5);
+                            opacity: 0;
+                        }
+                        to {
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+                    }
+
     </style>
 </head>
 <body>
