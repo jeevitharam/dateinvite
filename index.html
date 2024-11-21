@@ -133,6 +133,10 @@
                         requestAnimationFrame(frame);
                     }
                 })();
+                // After the confetti animation, redirect to a new page after 5 seconds
+                setTimeout(() => {
+                    window.location.href = 'cantwait.html'; // Change 'newpage.html' to your target page
+                }, 5000); // 5 seconds delay
             };
             document.body.appendChild(confettiScript);
         }
