@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #000;
             overflow: hidden; /* Prevent scrolling */
         }
 
@@ -34,6 +34,60 @@
             height: auto;
             max-width: 500px; /* Optional: limit max size */
         }
+
+        /* Popup container */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 400px;
+            display: none;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Popup image */
+        .popup img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff6666;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background: #ff4d4d;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -41,6 +95,22 @@
     <div class="image-container">
         <img src="cantwait.gif" alt="heck yeah cant wait">
     </div>
+<!-- Popup -->
+    <div class="popup" id="popup">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <img src="Popup1.png" alt="Popup Image">
+    </div>
 
 </body>
+<script>
+    // Show popup after 10 seconds
+    setTimeout(() => {
+        document.getElementById('popup').style.display = 'block';
+    }, 10000);
+
+    // Close popup when close button is clicked
+    document.getElementById('closeBtn').addEventListener('click', () => {
+        document.getElementById('popup').style.display = 'none';
+    });
+</script>
 </html>
